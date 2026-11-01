@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FileFit — shrink, convert & clean files privately</title>
+    <meta
+      name="description"
+      content="Compress photos under a size limit, convert HEIC to JPG, merge PDFs and remove GPS location from photos. Runs 100% in your browser, nothing is uploaded."
+    />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta property="og:title" content="FileFit — shrink, convert & clean files privately" />
+    <meta
+      property="og:description"
+      content="File too big? Wrong format? Fixed, right in your browser. Nothing is uploaded."
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./">
+        <img src="./icon.svg" alt="" width="32" height="32" />
+        <span>FileFit</span>
+      </a>
+      <nav class="topnav">
+        <button id="install" class="ghost" hidden></button>
+        <button id="lang" class="ghost" type="button"></button>
+        <a id="repo" class="ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 data-i18n="hero_title"></h1>
+        <p data-i18n="hero_tagline"></p>
+        <ul class="badges">
+          <li data-icon="lock" data-i18n="badge_private"></li>
+          <li data-icon="offline" data-i18n="badge_offline"></li>
+          <li data-icon="code" data-i18n="badge_free"></li>
+        </ul>
+      </section>
+
+      <div class="tools" role="tablist" id="tools"></div>
+
+      <section class="workspace" id="workspace" role="tabpanel">
+        <div class="options" id="options"></div>
+
+        <label class="drop" id="drop">
+          <input id="file-input" type="file" multiple />
+          <span class="drop-icon" data-icon="upload"></span>
+          <strong data-i18n="drop_title"></strong>
+          <span class="drop-hint" data-i18n="drop_hint"></span>
+          <span class="drop-formats" id="drop-formats"></span>
+        </label>
+
+        <div class="result" id="pdf-result" hidden></div>
+        <div class="actions" id="actions"></div>
+        <ul class="items" id="items"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-icon="lock" data-i18n="footer_privacy"></p>
+      <p class="footer-links">
+        <a id="repo-footer" target="_blank" rel="noopener noreferrer" data-i18n="footer_source"></a>
+        <span aria-hidden="true">·</span>
+        <span data-i18n="footer_license"></span>
+      </p>
+    </footer>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
